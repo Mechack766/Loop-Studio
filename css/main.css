@@ -25,6 +25,12 @@ section.hero-section {
     height: 10%;
 }
 
+nav {
+    .hamburger {
+        display: none;
+    }
+}
+
 ul {
     display: flex;
     list-style: none;
@@ -55,7 +61,7 @@ li a {
     }  
 }
 
-section.interactive {
+section.interaction {
     display: flex;
     gap: 2em;
     padding: 0 10;
@@ -312,41 +318,83 @@ nav.footer-right-nav {
 }
 
 @media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
+
+    .hero-section{
+        background-image: url(../images/mobile/image-hero.jpg);
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        padding: 30px;
+    }
+
+    .hero{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        gap: 2em;
     }
 
-    .hero-content {
-        width: 80%;
+    .hero img{
+        width: 140px;
+        height: auto;
     }
 
-    .interactive {
+    nav .hamburger{
+        display: block;
+        cursor: pointer;
+    }
+
+    nav .hamburger img{
+        width:28px;
+        height:auto;
+    }
+
+    nav ul{
+        display: none;
+    }
+
+    nav ul.show{
+        display:flex;
+        flex-direction:column;
+        position:absolute;
+        top:70px;
+        right:20px;
+        background:black;
+        padding:20px;
+    }
+    .hero-content{
+        width: 100%;
+        padding: 20px;
+        margin-top: 100px;
+    }
+
+    .hero-content h4{
+        font-size: 2.2rem;
+        line-height: 1.1;
+    }
+
+    .interactive{
         flex-direction: column;
-        align-items: center;
-        gap: 2em;
     }
 
-    .interaction-content {
+    .img-section img{
+        width: 100%;
+    }
+
+    .interaction-content{
         position: static;
-        transform: none;
-        width: 50%;
+        width: 100%;
+        text-align: center;
+        padding: 20px;
     }
 
-    .creation-section {
-        flex-direction: column;
-        align-items: center;
-        gap: 2em;
-    }
-
-    .creations {
+    .creations{
         grid-template-columns: 1fr;
     }
 
-    footer {
+    footer{
         flex-direction: column;
-        align-items: center;
-        gap: 1em;
+        text-align: center;
     }
+
 }
